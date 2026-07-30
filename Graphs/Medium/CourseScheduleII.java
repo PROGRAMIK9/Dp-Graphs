@@ -25,9 +25,10 @@ class Solution {
                 if(indegree[neigh] == 0) queue.add(neigh);
             }
         }
-        for(int in: indegree){
-            if(in > 0) return new int[]{};
-        }
-        return result;       
+        // for(int in: indegree){
+        //     if(in > 0) return new int[]{};
+        // }
+        // return result;
+        return i == numCourses ? result : new int[]{};       
     }
 }
