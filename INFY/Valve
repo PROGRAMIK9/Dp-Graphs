@@ -1,0 +1,24 @@
+class Solution {
+    public int minTaps(int n, int[] ranges) {
+        int[] maxReach = new int[n+1];
+        for(int i = 0; i <= n; i++){
+            int left = Math.max(0, i - ranges[i]);
+            int right = Math.min(n, i + ranges[i]);
+            maxReach[left] = Math.max(maxReach[left], right);
+        }
+        int count = 0;
+        int currentFlow = 0;
+        int nextFlow = 0;
+        for(int i = 0; i <= n; i++){
+            if(i > nextFlow) return -1;
+            nextFlow = Math.max(nextFlow, maxReach[i]);
+            if(i == currentFlow){
+                if(currentFlow != n){
+                    count++;
+                    currentFlow = nextFlow;
+                }
+            }
+        }
+        return count;
+    }
+}
