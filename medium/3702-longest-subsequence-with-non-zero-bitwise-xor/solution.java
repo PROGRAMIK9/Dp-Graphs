@@ -4,7 +4,7 @@
                 if(xor>max_xor){
                     max_xor = xor;
                 }
-                    length = j-i+1;
+                    length = j-i;
             }
         }
     }
