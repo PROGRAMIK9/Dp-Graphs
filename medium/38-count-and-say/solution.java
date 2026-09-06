@@ -10,7 +10,8 @@ class Solution {
                 i++;
                 System.out.println(currcnt+" "+i);
             }
-            sb.append(String.valueOf(currcnt) + prev.charAt(i));
+            sb.append(currcnt);
+            sb.append(prev.charAt(i));
             currcnt = 1;
         }
         if(prev.length()<=1 || prev.charAt(prev.length()-1) != prev.charAt(prev.length()-2)) sb.append("1"+prev.charAt(prev.length()-1));
